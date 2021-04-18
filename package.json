@@ -1,36 +1,37 @@
 {
-  "name": "gl-scss-styles",
+  "name": "gl-icons-assets",
   "version": "1.0.0",
-  "description": "Common styles to be used on web applications.",
+  "description": "Common icons to be used on web applications.",
   "assets": "assets",
-  "main": "assets/style",
+  "main": "assets/img",
   "files": [
     "assets/*"
   ],
   "scripts": {
-    "build": "copyfiles -a -u2 src/assets/style/** assets",
+    "copy-files": "npm run copy-main && npm run copy-md",
+    "copy-main": "copyfiles -a -u2 src/assets/img/** assets",
+    "copy-md": "copyfiles -a -u1 src/README.md assets",
     "clean": "shx rm -rf assets",
-    "production": "npm run clean && npm run build && clean-publish --without-publish",
-    "publish": "npm run production && clean-publish"
+    "production": "npm run clean && npm run copy-files",
+    "publish": "npm run production && npm publish && npm run clean"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glaucioleonardo/gl-scss-styles.git"
+    "url": "git+https://github.com/glaucioleonardo/gl-icons-assets.git"
   },
   "keywords": [
-    "scss",
-    "css",
-    "web-styles",
-    "ng-styles",
+    "svg",
+    "image",
+    "icons",
+    "web-icons",
+    "ng-icons",
     "angular styles"
   ],
   "author": "Gláucio Leonardo Sant'ana",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/glaucioleonardo/gl-scss-styles/issues"
+    "url": "https://github.com/glaucioleonardo/gl-icons-assets/issues"
   },
-  "homepage": "https://github.com/glaucioleonardo/gl-scss-styles#readme",
-  "devDependencies": {
-    "clean-publish": "^2.1.1"
-  }
+  "homepage": "https://github.com/glaucioleonardo/gl-icons-assets#readme",
+  "devDependencies": {}
 }
