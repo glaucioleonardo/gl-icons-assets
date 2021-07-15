@@ -1,6 +1,6 @@
 {
   "name": "gl-icons-assets",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Common icons to be used on web applications.",
   "assets": "assets",
   "main": "assets/img",
@@ -12,8 +12,7 @@
     "copy-main": "copyfiles -a -u2 \"src/assets/img/**\" assets",
     "copy-md": "copyfiles -a -u1 \"src/README.md\" assets",
     "clean": "shx rm -rf assets",
-    "production": "npm run clean && npm run copy-files",
-    "publish": "npm publish"
+    "production": "npm run clean && npm run copy-files"
   },
   "repository": {
     "type": "git",
